@@ -5,7 +5,7 @@ const router = express.Router();
 const request = require('request');
 const YOLPURL = "https://map.yahooapis.jp/weather/V1/place"
 
-router.get('/getWether', function(req, res, next){
+router.get('/getWeather', function(req, res, next){
     request.get({
         uri: YOLPURL,
         headers: {'Content-type': 'application/json'},
