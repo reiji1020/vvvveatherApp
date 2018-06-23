@@ -11,7 +11,7 @@ router.get('/getWeather', function(req, res, next){
         headers: {'Content-type': 'application/json'},
         qs: {
             appid: process.env.NODE_APP_ID,
-            coordinates: "=139.732293,35.663613",
+            coordinates: "=" + req.query.longitude + "," + req.query.latitude
         },
         json: true
     },function(err, request, data){
