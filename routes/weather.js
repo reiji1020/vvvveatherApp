@@ -11,11 +11,21 @@ router.get('/getWeather', function(req, res, next){
         headers: {'Content-type': 'application/json'},
         qs: {
             appid: process.env.NODE_APP_ID,
-            coordinates: "=" + req.query.longitude + "," + req.query.latitude
+            coordinates: "=" + req.query.longitude + "," + req.query.latitude,
+            output: "json"
         },
         json: true
     },function(err, request, data){
-        res.send(data);
+        res.send(
+            {
+                ResultSet: {
+                    id: data.Feature[0].ID,
+                    name: data.Feature[0].Name,
+                    geometry: "地点"+ req.query.longitude + "," +req.query.latitude,
+                    weatherList: data.Feature[0].Property.WeatherList,
+                }
+            }
+        );
     });
     
 })
