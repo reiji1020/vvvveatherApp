@@ -11,7 +11,7 @@ router.get('/getWeather', function(req, res, next){
         headers: {'Content-type': 'application/json'},
         qs: {
             appid: process.env.NODE_APP_ID,
-            coordinates: "=" + req.query.longitude + "," + req.query.latitude,
+            coordinates: req.query.longitude + "," + req.query.latitude,
             output: "json"
         },
         json: true
@@ -21,7 +21,9 @@ router.get('/getWeather', function(req, res, next){
                 ResultSet: {
                     id: data.Feature[0].ID,
                     name: data.Feature[0].Name,
-                    geometry: "地点"+ req.query.longitude + "," +req.query.latitude,
+                    geometry: req.query.longitude + "," +req.query.latitude,
+                    longitude: req.query.longitude,
+                    latitude: req.query.latitude,
                     weatherList: data.Feature[0].Property.WeatherList,
                 }
             }
