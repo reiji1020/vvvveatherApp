@@ -3,7 +3,7 @@
 [Yahoo天気API](https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html)を叩いて，天気情報を取得するためのAPIコード
 
 # version
-1.1.0
+1.2.1
 
 # License
 MIT
@@ -51,37 +51,19 @@ http://localhost:3000/weather/getWeather?longitude=35.681235&latitude=139.763995
 ```json
 {
     "ResultSet": {
-        "name": "地点(0,139.76399)の2018年07月10日 00時30分から60分間の天気情報",
-        "geometry": "地点35.681235,139.763995",
+        "name": "地点(35.681235,139.76399)の2018年07月13日 22時35分から60分間の天気情報",
+        "geometry": "35.681235,139.763995",
+        "longitude": "35.681235",
+        "latitude": "139.763995",
         "weatherList": {
-            "Weather": [{
-                    "Type": "observation",
-                    "Date": "201807100030"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100040"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100050"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100100"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100110"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100120"
-                },
-                {
-                    "Type": "forecast",
-                    "Date": "201807100130"
-                }
+            "Weather": [
+                { "Type": "observation", "Date": "201807132235" },
+                { "Type": "forecast", "Date": "201807132245" },
+                { "Type": "forecast", "Date": "201807132255" },
+                { "Type": "forecast", "Date": "201807132305" },
+                { "Type": "forecast", "Date": "201807132315" },
+                { "Type": "forecast", "Date": "201807132325" },
+                { "Type": "forecast", "Date": "201807132335" }
             ]
         }
     }
